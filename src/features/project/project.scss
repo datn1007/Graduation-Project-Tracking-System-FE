@@ -1,0 +1,16 @@
+/* Project detail tabs are router links (NavLink) styled like the shared Tabs component. */
+.project-tabs {
+  .tabs__tab { display: inline-block; text-decoration: none; }
+  .tabs__tab.is-active { background: var(--color-surface); color: var(--color-text); box-shadow: var(--shadow-sm); }
+}
+
+/* Admin "Xếp nhóm" */
+.grouping-layout {
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: start;
+  @media (max-width: 1023px) { grid-template-columns: minmax(0, 1fr); }
+}
+.grouping-row {
+  align-items: center;
+  &__actions { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+}

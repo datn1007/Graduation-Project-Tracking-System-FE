@@ -1,0 +1,50 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Secret / private keys
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+
+# Service account / credentials
+service-account.json
+firebase-adminsdk*.json
+google-service-account.json
+*-credentials.json
+
+# AI agent skills / local tooling (per developer, never committed)
+.agents/
+.claude/
+skills-lock.json
+CLAUDE.local.md
+BE_DEPLOY_CHECKLIST.md
+.gitignore
+.gitignore

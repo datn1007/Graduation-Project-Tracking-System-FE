@@ -1,0 +1,43 @@
+// Design variables + mixins. Emits no CSS, so any stylesheet may @use it.
+
+$primary: #2b6cb0;
+$primary-50: #ebf4fb;
+$primary-100: #d4e6f6;
+$primary-600: #2b6cb0;
+$primary-700: #2c5282;
+$primary-800: #1e3a5f;
+$secondary: #f6ad55;
+$background: #f4f6fa;
+$surface: #ffffff;
+$border: #e3e8ef;
+$border-strong: #cbd3df;
+$text-color: #1f2937;
+$muted: #6b7280;
+$success: #16a34a;
+$danger: #dc2626;
+$warning: #d97706;
+$info: #0891b2;
+
+$font-stack: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+@mixin down($bp) {
+  @media (max-width: ($bp - 1px)) {
+    @content;
+  }
+}
+
+@mixin up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

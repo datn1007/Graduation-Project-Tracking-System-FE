@@ -1,0 +1,43 @@
+@use '../../styles/variables' as m;
+
+.meeting-item {
+  &__agenda { margin-top: 6px; font-size: 0.8125rem; color: #374151; white-space: pre-wrap; }
+  &__footer { margin-top: 8px; }
+}
+
+
+
+.slot-picker { display: flex; flex-direction: column; gap: 4px; }
+.slot-day {
+  display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 12px; align-items: start;
+  padding: 12px 0; border-bottom: 1px dashed var(--color-border);
+  &:last-child { border-bottom: 0; }
+  @include m.down(m.$bp-md) { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  &__label { display: flex; flex-direction: column; }
+  &__weekday { font-weight: 600; font-size: 0.875rem; text-transform: capitalize; }
+  &__slots { display: flex; gap: 8px; flex-wrap: wrap; }
+}
+.slot-btn {
+  min-height: 36px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--color-primary-100); background: var(--color-primary-50); color: var(--color-primary-700);
+  font-size: 0.8125rem; font-weight: 600; font-variant-numeric: tabular-nums;
+  &:hover:not(:disabled) { border-color: var(--color-primary); }
+  &.is-selected { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+  &:disabled { cursor: not-allowed; background: var(--color-neutral-bg); border-color: var(--color-border); color: var(--color-text-muted); text-decoration: line-through; }
+}
+
+.booking-summary {
+  display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 8px 12px; font-size: 0.875rem;
+  dt { color: var(--color-text-muted); }
+  dd { font-weight: 500; overflow-wrap: anywhere; }
+}
+
+
+.date-chip {
+  width: 48px; flex-shrink: 0; text-align: center; border-radius: var(--radius-sm); overflow: hidden;
+  border: 1px solid var(--color-border);
+  &__month { background: var(--color-primary); color: #fff; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; padding: 2px 0; }
+  &__day { font-size: 1.125rem; font-weight: 700; padding: 2px 0; }
+}
+
+.booking-notes { padding: 12px 14px; border-radius: var(--radius-md); background: var(--color-surface-muted); border: 1px solid var(--color-border); white-space: pre-wrap; font-size: 0.875rem; }
